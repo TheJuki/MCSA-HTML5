@@ -1,0 +1,16 @@
+[
+  { "icon": "home", "text": "Home", "link": "/" },
+  {
+    "icon": "keyboard_arrow_up",
+    "icon-alt": "keyboard_arrow_down",
+    "text": "Test",
+    "children": [
+      {
+        "icon": "live_help",
+        "text": "Tests",
+        "link": "/test"
+      }
+    ]
+  }
+]
+      
