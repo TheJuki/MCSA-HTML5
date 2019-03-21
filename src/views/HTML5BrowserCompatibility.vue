@@ -28,7 +28,7 @@ export default Vue.extend({
     headers: [
       { text: 'Browser', value: 'browser', sortable: false },
       { text: 'Version', value: 'version', sortable: false },
-      { text: 'Link', value: 'link', sortable: false741387
+      { text: 'Link', value: 'link', sortable: false
        }
     ],
     tableData: [
