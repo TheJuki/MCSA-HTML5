@@ -14,11 +14,17 @@ export default new Router({
       children: [
         {
           path: 'home',
-          alias: '',
+          meta: { title: 'Home' },
           component: () => import('./views/Home.vue')
         },
         {
+          path: '/browser_compatibility',
+          meta: { title: 'HTML5 Browser Compatibility' },
+          component: () => import('./views/HTML5BrowserCompatibility.vue')
+        },
+        {
           path: '/test',
+          meta: { title: 'Test' },
           component: () => import('./views/Test.vue')
         }
       ]
