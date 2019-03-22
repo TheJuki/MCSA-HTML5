@@ -35,7 +35,7 @@ fastify.register(
         imgSrc: ["'self'", 'data:', 'sp.tinymce.com'],
         sandbox: ['allow-forms', 'allow-scripts', 'allow-same-origin'],
         scriptSrc: ["'self'", 'cloud.tinymce.com'],
-        connectSrc: ["'self'", 'cloud.tinymce.com', process.env.VUE_APP_API_URL],
+        connectSrc: ["'self'", 'cloud.tinymce.com', 'rainmaker.tiny.cloud', process.env.VUE_APP_API_URL],
         upgradeInsecureRequests: true,
         manifestSrc: ["'self'"]
       }

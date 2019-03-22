@@ -33,7 +33,7 @@
 import Vue from 'vue'
 import axios, {
   AxiosResponse,
-  AxiosError,
+  AxiosError
 } from 'axios'
 
 export default Vue.extend({

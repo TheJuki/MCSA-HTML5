@@ -9,8 +9,8 @@
     "branding": false,
     "plugins": [
       "advlist autolink lists link image charmap print preview anchor",
-      "searchreplace visualblocks code fullscreen textcolor",
-      "insertdatetime image imagetools table paste wordcount visualchars colorpicker"
+      "searchreplace visualblocks code fullscreen",
+      "insertdatetime image imagetools table paste wordcount visualchars"
     ],
     "menu": {
       "edit": {
