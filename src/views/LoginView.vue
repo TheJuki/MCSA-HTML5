@@ -65,15 +65,12 @@ export default Vue.extend({
         'token'
       )
 
-      this.$router.push('/')
-
-      /*
       this.$store
         .dispatch('LOGIN', {
           id: localStorage.getItem('id'),
           username: localStorage.getItem('username'),
           fullName: localStorage.getItem('fullName'),
-          roles: localStorage.getItem('roles')
+          roles: JSON.parse(localStorage.getItem('roles') || '')
         })
         .then(res => {
           if (this.$store.state.route.query.redirect) {
@@ -82,7 +79,6 @@ export default Vue.extend({
             this.$router.push('/')
           }
         })
-        */
     } else {
       this.$nextTick(function () {
         document.title = `${this.$t('website.title')} | ${this.$t('login.login')}`
@@ -146,6 +142,27 @@ export default Vue.extend({
 
             this.showAlert = true
             this.formErrors = { form: this.$t('website.error') }
+
+            // TODO: Remove after testing
+            localStorage.setItem('id', '')
+            localStorage.setItem('token', 'ok')
+            localStorage.setItem('username', 'jkirk')
+            localStorage.setItem('fullName', 'Justin Kirk')
+            localStorage.setItem('roles', JSON.stringify(['test_view']))
+
+            this.$store.dispatch('LOGIN', {
+              id: '',
+              username: 'jkirk',
+              fullName: 'Justin Kirk',
+              roles: ['test_view']
+            })
+            .then(res => {
+              if (this.$store.state.route.query.redirect) {
+                this.$router.push(this.$store.state.route.query.redirect)
+              } else {
+                this.$router.push('/')
+              }
+            })
           })
       }
     }

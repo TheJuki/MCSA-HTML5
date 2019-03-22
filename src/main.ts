@@ -16,17 +16,16 @@ api.defaults.baseURL = process.env.VUE_APP_API_URL
 
 // Authenticate routes
 router.beforeEach((to, from, next) => {
+  let roles : string[] = []
+  roles = store.state.roles
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!router.app.$store.state.isLoggedIn) {
+    if (!store.state.isLoggedIn) {
       next({
         path: '/login',
         query: { redirect: to.fullPath }
       })
     } else {
-      if (
-        !to.matched.some(record =>
-          router.app.$store.state.roles.includes(record.meta.role)
-        )) {
+      if (!to.matched.some(record => roles.includes(record.meta.role))) {
         next({
           path: '/unauthorized'
         })
@@ -42,7 +41,7 @@ router.beforeEach((to, from, next) => {
 declare module 'vue/types/vue' {
   interface Vue {
     $api: AxiosInstance,
-    $tinymce_api_key: String
+    $tinyMCEApiKey: String
   }
 }
 

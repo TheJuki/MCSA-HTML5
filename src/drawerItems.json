@@ -11,6 +11,7 @@
         "link": "/browser_compatibility"
       }
     ]
-  }
+  },
+  { "icon": "check_circle", "text": "Test", "link": "/test" }
 ]
       

@@ -112,18 +112,19 @@ export default Vue.extend({
   name: 'container',
   drawerItems: DrawerItemsConfig,
   computed: {
-    // ...mapGetters(['username', 'fullName', 'isLoggedIn', 'roles', 'darkTheme'])
+    ...mapGetters(['username', 'fullName', 'isLoggedIn', 'roles'])
   },
   data: () => ({
     drawer: null,
-    search: '',
-    username: 'jkirk',
-    fullName: 'Justin Kirk',
-    isLoggedIn: true
+    search: ''
   }),
   methods: {
     logout () {
-
+      localStorage.clear()
+      this.$store.dispatch('LOGOUT').then(res => {
+        this.$api.defaults.headers.common['Authorization'] = null
+        this.$router.push('/login?logout=true')
+      })
     },
     performSearch () {
 

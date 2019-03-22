@@ -2,6 +2,7 @@
   "login": {
     "continue": "Login to continue.",
     "error": "Incorrect username or password.",
+    "logout_successful": "You've logged out.",
     "login": "Login",
     "password": "Password",
     "username": "Username"
@@ -16,7 +17,6 @@
     "search": "Search",
     "log_out": "Log Out",
     "change_password": "Change Password",
-    "logout_successful": "You've logged out.",
     "unauthorized": "Unauthorized",
     "unauthorized_message": "Sorry, you are not authorized to view the requested page."
   }
