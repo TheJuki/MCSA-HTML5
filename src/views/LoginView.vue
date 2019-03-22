@@ -61,7 +61,6 @@ export default Vue.extend({
       }
     } else {
       this.$nextTick(function () {
-        document.title = `${this.$t('website.title')} | ${this.$t('login.login')}`
         this.alreadyLoggedIn = false
         if (this.$store.state.route.query.redirect) {
           this.showAlert = true

@@ -29,9 +29,6 @@ export default Vue.extend({
   components: {
     HelloI18n,
     'editor': Editor
-  },
-  activated () {
-    document.title = `${this.$t('website.title')} | Home}`
   }
 })
 </script>

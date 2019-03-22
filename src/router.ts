@@ -10,6 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/login',
+      meta: { title: 'Login' },
       component: () => import('./views/LoginView.vue')
     },
     {
@@ -18,23 +19,27 @@ export default new Router({
       children: [
         {
           path: '/',
+          meta: { title: 'Home' },
           component: () => import('./views/Home.vue')
         },
         {
           path: '/browser_compatibility',
+          meta: { title: 'Browser Compatibility' },
           component: () => import('./views/HTML5BrowserCompatibility.vue')
         },
         {
           path: '/test',
-          meta: { role: 'test_view', requiresAuth: true },
+          meta: { title: 'Test', role: 'test_view', requiresAuth: true },
           component: () => import('./views/Test.vue')
         },
         {
           path: '/unauthorized',
+          meta: { title: 'Unauthorized' },
           component: () => import('./views/UnauthorizedView.vue')
         },
         {
           path: '*',
+          meta: { title: '404' },
           component: () => import('./views/HTTP404View.vue')
         }
       ]

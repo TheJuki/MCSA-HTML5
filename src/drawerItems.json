@@ -4,6 +4,7 @@
     "icon": "keyboard_arrow_up",
     "icon-alt": "keyboard_arrow_down",
     "text": "Information",
+    "model": false,
     "children": [
       {
         "icon": "live_help",

@@ -18,9 +18,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'HTTP404View',
-  activated () {
-    document.title = `${this.$t('website.title')} | 404`
-  }
+  name: 'HTTP404View'
 })
 </script>

@@ -72,9 +72,6 @@ export default Vue.extend({
         link: 'https://www.apple.com/safari/'
       }
     ]
-  }),
-  activated () {
-    document.title = `${this.$t('website.title')} | HTML5 Browser Compatibility}`
-  }
+  })
 })
 </script>

@@ -14,6 +14,8 @@ const api = axios.create()
 
 api.defaults.baseURL = process.env.VUE_APP_API_URL
 
+const websiteTitle = process.env.VUE_APP_TITLE
+
 // Authenticate routes
 router.beforeEach((to, from, next) => {
   let roles : string[] = []
@@ -35,26 +37,31 @@ router.beforeEach((to, from, next) => {
         roles = store.state.roles
         if (to.matched.some(record => record.meta.requiresAuth) &&
               !to.matched.some(record => roles.includes(record.meta.role))) {
-          next({
-            path: '/unauthorized'
-          })
+                document.title = 'Unauthorized' + ' - ' + websiteTitle;
+                next({
+                  path: '/unauthorized'
+                })
         } else {
+          document.title = to.meta.title + ' - ' + websiteTitle;
           next()
         }
       })
   } else if (to.matched.some(record => record.meta.requiresAuth) &&
             !store.state.isLoggedIn) {
-      next({
-        path: '/login',
-        query: { redirect: to.fullPath }
-      })
+              document.title = 'Login' + ' - ' + websiteTitle;
+              next({
+                path: '/login',
+                query: { redirect: to.fullPath }
+              })
   } else if (to.matched.some(record => record.meta.requiresAuth) &&
             store.state.isLoggedIn &&
             !to.matched.some(record => roles.includes(record.meta.role))) {
-      next({
-        path: '/unauthorized'
-      })
+              document.title = 'Unauthorized' + ' - ' + websiteTitle;
+              next({
+                path: '/unauthorized'
+              })
   } else {
+    document.title = to.meta.title + ' - ' + websiteTitle;
     next()
   }
 })

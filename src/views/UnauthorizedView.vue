@@ -18,9 +18,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'home',
-  activated () {
-    document.title = `${this.$t('website.title')} | ${this.$t('website.unauthorized')}`
-  }
+  name: 'home'
 })
 </script>
