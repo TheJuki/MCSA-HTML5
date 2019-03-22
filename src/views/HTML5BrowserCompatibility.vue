@@ -1,5 +1,5 @@
 <template>
-  <v-card style="margin: 20px">
+  <v-card>
     <v-card-title>
       Browser Compatibility
     </v-card-title>
@@ -28,8 +28,7 @@ export default Vue.extend({
     headers: [
       { text: 'Browser', value: 'browser', sortable: false },
       { text: 'Version', value: 'version', sortable: false },
-      { text: 'Link', value: 'link', sortable: false
-       }
+      { text: 'Link', value: 'link', sortable: false }
     ],
     tableData: [
       {
@@ -67,7 +66,7 @@ export default Vue.extend({
         version: '5+',
         link: 'https://www.opera.com/mobile/android'
       },
-       {
+      {
         browser: 'Safari',
         version: '5+',
         link: 'https://www.apple.com/safari/'

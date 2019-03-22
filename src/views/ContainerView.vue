@@ -92,4 +92,8 @@ export default Vue.extend({
 .fade-enter, .fade-leave-active {
   opacity: 0
 }
+
+.view {
+  margin: 20px
+}
 </style>

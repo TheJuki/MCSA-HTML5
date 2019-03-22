@@ -13,7 +13,7 @@ export default new Router({
       component: ContainerView,
       children: [
         {
-          path: 'home',
+          path: '/',
           meta: { title: 'Home' },
           component: () => import('./views/Home.vue')
         },
