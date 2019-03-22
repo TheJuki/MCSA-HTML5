@@ -47,7 +47,7 @@
         <img class="logo" src="@/assets/MCSA.png" alt="logo">
         <span class="hidden-xs-only" style="vertical-align: middle">Exam 70-480</span>
       </v-toolbar-title>
-        <v-text-field flat="flat" solo-inverted="solo-inverted" append-icon="search" v-model="search" :label="$t('website.search')" v-show='isLoggedIn' style="width: 25vw;" clearable="clearable" @keyup.enter="performSearch"></v-text-field>
+        <v-text-field flat solo-inverted hide-details prepend-inner-icon="search" v-model="search" :label="$t('website.search')" v-show='isLoggedIn' style="width: 25vw;" clearable="clearable" @keyup.enter="performSearch"></v-text-field>
       <v-spacer></v-spacer>
       <v-btn color="primary" dark v-if="!isLoggedIn" to="/login">{{ $t('login.login') }}</v-btn>
       <v-menu offset-y="offset-y" bottom="bottom" min-width="300px" v-if="isLoggedIn">
