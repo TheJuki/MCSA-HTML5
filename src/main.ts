@@ -44,10 +44,16 @@ router.beforeEach((to, from, next) => {
       })
   } else if (to.matched.some(record => record.meta.requiresAuth) &&
             !store.state.isLoggedIn) {
-    next({
-      path: '/login',
-      query: { redirect: to.fullPath }
-    })
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+  } else if (to.matched.some(record => record.meta.requiresAuth) &&
+            store.state.isLoggedIn &&
+            !to.matched.some(record => roles.includes(record.meta.role))) {
+      next({
+        path: '/unauthorized'
+      })
   } else {
     next()
   }
