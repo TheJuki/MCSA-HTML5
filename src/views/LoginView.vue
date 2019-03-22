@@ -32,15 +32,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import axios, {
-  AxiosRequestConfig,
   AxiosResponse,
   AxiosError,
-  AxiosInstance,
-  AxiosAdapter,
-  Cancel,
-  CancelToken,
-  CancelTokenSource,
-  Canceler
 } from 'axios'
 
 export default Vue.extend({
@@ -61,24 +54,11 @@ export default Vue.extend({
 
   mounted () {
     if (localStorage.getItem('token')) {
-      this.$api.defaults.headers.common['Authorization'] = localStorage.getItem(
-        'token'
-      )
-
-      this.$store
-        .dispatch('LOGIN', {
-          id: localStorage.getItem('id'),
-          username: localStorage.getItem('username'),
-          fullName: localStorage.getItem('fullName'),
-          roles: JSON.parse(localStorage.getItem('roles') || '')
-        })
-        .then(res => {
-          if (this.$store.state.route.query.redirect) {
-            this.$router.push(this.$store.state.route.query.redirect)
-          } else {
-            this.$router.push('/')
-          }
-        })
+      if (this.$store.state.route.query.redirect) {
+        this.$router.push(this.$store.state.route.query.redirect)
+      } else {
+        this.$router.push('/')
+      }
     } else {
       this.$nextTick(function () {
         document.title = `${this.$t('website.title')} | ${this.$t('login.login')}`
@@ -156,13 +136,13 @@ export default Vue.extend({
               fullName: 'Justin Kirk',
               roles: ['test_view']
             })
-            .then(res => {
-              if (this.$store.state.route.query.redirect) {
-                this.$router.push(this.$store.state.route.query.redirect)
-              } else {
-                this.$router.push('/')
-              }
-            })
+              .then(res => {
+                if (this.$store.state.route.query.redirect) {
+                  this.$router.push(this.$store.state.route.query.redirect)
+                } else {
+                  this.$router.push('/')
+                }
+              })
           })
       }
     }

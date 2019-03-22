@@ -18,21 +18,36 @@ api.defaults.baseURL = process.env.VUE_APP_API_URL
 router.beforeEach((to, from, next) => {
   let roles : string[] = []
   roles = store.state.roles
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!store.state.isLoggedIn) {
-      next({
-        path: '/login',
-        query: { redirect: to.fullPath }
+
+  if (localStorage.getItem('token') && !store.state.isLoggedIn) {
+    api.defaults.headers.common['Authorization'] = localStorage.getItem(
+      'token'
+    )
+
+    store
+      .dispatch('LOGIN', {
+        id: localStorage.getItem('id'),
+        username: localStorage.getItem('username'),
+        fullName: localStorage.getItem('fullName'),
+        roles: JSON.parse(localStorage.getItem('roles') || '')
       })
-    } else {
-      if (!to.matched.some(record => roles.includes(record.meta.role))) {
-        next({
-          path: '/unauthorized'
-        })
-      } else {
-        next()
-      }
-    }
+      .then(res => {
+        roles = store.state.roles
+        if (to.matched.some(record => record.meta.requiresAuth) &&
+              !to.matched.some(record => roles.includes(record.meta.role))) {
+          next({
+            path: '/unauthorized'
+          })
+        } else {
+          next()
+        }
+      })
+  } else if (to.matched.some(record => record.meta.requiresAuth) &&
+            !store.state.isLoggedIn) {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
   } else {
     next()
   }
