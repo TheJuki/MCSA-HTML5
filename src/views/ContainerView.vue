@@ -47,6 +47,46 @@
         <img class="logo" src="@/assets/MCSA.png" alt="logo">
         <span class="hidden-xs-only" style="vertical-align: middle">Exam 70-480</span>
       </v-toolbar-title>
+        <v-text-field flat="flat" solo-inverted="solo-inverted" append-icon="search" v-model="search" :label="$t('website.search')" v-show='isLoggedIn' style="width: 25vw;" clearable="clearable" @keyup.enter="performSearch"></v-text-field>
+      <v-spacer></v-spacer>
+      <v-menu offset-y="offset-y" bottom="bottom" min-width="300px" v-if="isLoggedIn">
+        <v-btn icon="icon" slot="activator">
+            <v-icon large="large">account_circle</v-icon>
+        </v-btn>
+        <v-card>
+          <v-list>
+            <v-list-tile avatar="avatar">
+              <v-list-tile-avatar>
+                <v-icon large="large">account_circle</v-icon>
+              </v-list-tile-avatar>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ fullName }}</v-list-tile-title>
+                <v-list-tile-sub-title>{{ username }}</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+          <v-divider></v-divider>
+          <v-list>
+            <v-list-tile @click="changePassword">
+              <v-list-tile-action>
+                <v-icon>lock</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ $t('website.change_password') }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-divider></v-divider>
+            <v-list-tile @click="logout()">
+              <v-list-tile-action>
+                  <v-icon>exit_to_app</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                  <v-list-tile-title>{{ $t('website.log_out') }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-card>
+      </v-menu>
     </v-toolbar>
     <v-content>
       <transition name="fade" mode="out-in">
@@ -58,7 +98,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-// eslint-disable-next-line
+import { mapGetters } from 'vuex'
+
 import DrawerItemsConfig from '@/drawerItems.json'
 
 declare module 'vue/types/options' {
@@ -70,9 +111,27 @@ declare module 'vue/types/options' {
 export default Vue.extend({
   name: 'container',
   drawerItems: DrawerItemsConfig,
+  computed: {
+    // ...mapGetters(['username', 'fullName', 'isLoggedIn', 'roles', 'darkTheme'])
+  },
   data: () => ({
-    drawer: null
-  })
+    drawer: null,
+    search: '',
+    username: 'jkirk',
+    fullName: 'Justin Kirk',
+    isLoggedIn: true
+  }),
+  methods: {
+    logout () {
+
+    },
+    performSearch () {
+
+    },
+    changePassword () {
+
+    }
+  }
 })
 </script>
 

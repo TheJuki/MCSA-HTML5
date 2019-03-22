@@ -9,23 +9,33 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/login',
+      component: () => import('./views/LoginView.vue')
+    },
+    {
       path: '/',
       component: ContainerView,
       children: [
         {
           path: '/',
-          meta: { title: 'Home' },
           component: () => import('./views/Home.vue')
         },
         {
           path: '/browser_compatibility',
-          meta: { title: 'HTML5 Browser Compatibility' },
           component: () => import('./views/HTML5BrowserCompatibility.vue')
         },
         {
           path: '/test',
-          meta: { title: 'Test' },
+          meta: { role: 'test_view', requiresAuth: true },
           component: () => import('./views/Test.vue')
+        },
+        {
+          path: '/unauthorized',
+          component: () => import('./views/UnauthorizedView.vue')
+        },
+        {
+          path: '*',
+          component: () => import('./views/HTTP404View.vue')
         }
       ]
     }

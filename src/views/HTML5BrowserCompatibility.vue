@@ -23,7 +23,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'HTML5 Browser Compatibility',
+  name: 'HTML5BrowserCompatibility',
   data: () => ({
     headers: [
       { text: 'Browser', value: 'browser', sortable: false },
@@ -72,6 +72,9 @@ export default Vue.extend({
         link: 'https://www.apple.com/safari/'
       }
     ]
-  })
+  }),
+  activated () {
+    document.title = `${this.$t('website.title')} | HTML5 Browser Compatibility}`
+  }
 })
 </script>

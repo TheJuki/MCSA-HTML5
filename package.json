@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "start": "cross-env NODE_ENV=production node server",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
@@ -12,12 +13,17 @@
   "dependencies": {
     "@tinymce/tinymce-vue": "^2.0.0",
     "axios": "^0.18.0",
+    "dotenv": "^7.0.0",
+    "fastify": "^2.1.0",
+    "fastify-compress": "^0.8.1",
+    "fastify-helmet": "^3.0.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.2",
     "vuetify": "^1.5.7",
-    "vuex": "^3.1.0"
+    "vuex": "^3.1.0",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
@@ -35,6 +41,7 @@
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.15.3",
     "eslint-plugin-vue": "^5.2.2",
     "stylus": "^0.54.5",

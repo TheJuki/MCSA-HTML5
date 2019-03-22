@@ -1,0 +1,39 @@
+{
+    "height": "300px",
+    "width": "90%",
+    "browser_spellcheck": true,
+    "paste_data_images": true,
+    "relative_urls": false,
+    "remove_script_host": false,
+    "convert_urls": true,
+    "branding": false,
+    "plugins": [
+      "advlist autolink lists link image charmap print preview anchor",
+      "searchreplace visualblocks code fullscreen textcolor",
+      "insertdatetime image imagetools table paste wordcount visualchars colorpicker"
+    ],
+    "menu": {
+      "edit": {
+        "title": "Edit",
+        "items": "undo redo | cut copy paste pastetext | selectall"
+      },
+      "view": {
+        "title": "View",
+        "items": "visualaid print preview"
+      },
+      "format": {
+        "title": "Format",
+        "items": "bold italic underline strikethrough superscript subscript | formats | removeformat"
+      },
+      "table": {
+        "title": "Table",
+        "items": "inserttable tableprops deletetable | cell row column"
+      },
+      "tools": {
+        "title": "Tools",
+        "items": "code searchreplace"
+      }
+    },
+    "toolbar": "insertfile undo redo | styleselect | forecolor backcolor bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image link | print preview fullscreen insertdatetime visualchars"
+  }
+  
