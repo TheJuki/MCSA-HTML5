@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+  width="500pt" height="500pt" viewBox="0 0 500 500"
+  preserveAspectRatio="xMidYMid meet">
+<metadata>
+Example by TheJuki
+</metadata>
+<rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg>

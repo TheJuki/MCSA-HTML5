@@ -6,6 +6,7 @@
       </v-card-title>
 
       <v-container>
+        <img src="@/assets/SVGExample.svg" />
       </v-container>
     </v-card>
   </div>
@@ -15,11 +16,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'SVGView',
-  data: () => ({
-    model: {
-      description: 'Test'
-    }
-  })
+  name: 'SVGView'
 })
 </script>
