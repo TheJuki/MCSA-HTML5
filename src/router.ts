@@ -15,17 +15,57 @@ export default new Router({
         {
           path: '/',
           meta: { title: 'Home' },
-          component: () => import('./views/Home.vue')
+          component: () => import('./views/HomeView.vue')
         },
         {
-          path: '/browser_compatibility',
+          path: '/browser-compatibility',
           meta: { title: 'Browser Compatibility' },
-          component: () => import('./views/HTML5BrowserCompatibility.vue')
+          component: () => import('./views/HTML5BrowserCompatibilityView.vue')
         },
         {
-          path: '/test',
-          meta: { title: 'Test' },
-          component: () => import('./views/Test.vue')
+          path: '/audio',
+          meta: { title: 'Audio' },
+          component: () => import('./views/AudioView.vue')
+        },
+        {
+          path: '/video',
+          meta: { title: 'Video' },
+          component: () => import('./views/VideoView.vue')
+        },
+        {
+          path: '/ajax',
+          meta: { title: 'AJAX' },
+          component: () => import('./views/AJAXView.vue')
+        },
+        {
+          path: '/canvas',
+          meta: { title: 'Canvas' },
+          component: () => import('./views/CanvasView.vue')
+        },
+        {
+          path: '/drag-drop',
+          meta: { title: 'Drop & Drop' },
+          component: () => import('./views/DragDropView.vue')
+        },
+        {
+          path: '/jquery',
+          meta: { title: 'JQuery' },
+          component: () => import('./views/JQueryView.vue')
+        },
+        {
+          path: '/svg',
+          meta: { title: 'SVG' },
+          component: () => import('./views/SVGView.vue')
+        },
+        {
+          path: '/web-socket',
+          meta: { title: 'Web Socket' },
+          component: () => import('./views/WebSocketView.vue')
+        },
+        {
+          path: '/web-worker',
+          meta: { title: 'Web Worker' },
+          component: () => import('./views/WebWorkerView.vue')
         },
         {
           path: '*',

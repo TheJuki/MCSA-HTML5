@@ -9,10 +9,18 @@
       {
         "icon": "live_help",
         "text": "HTML5 Browser Compatibility",
-        "link": "/browser_compatibility"
+        "link": "/browser-compatibility"
       }
     ]
   },
-  { "icon": "check_circle", "text": "Test", "link": "/test" }
+  { "icon": "check_circle", "text": "Audio", "link": "/audio" },
+  { "icon": "check_circle", "text": "Video", "link": "/video" },
+  { "icon": "check_circle", "text": "AJAX", "link": "/ajax" },
+  { "icon": "check_circle", "text": "Canvas", "link": "/canvas" },
+  { "icon": "check_circle", "text": "Drop & Drop", "link": "/drag-drop" },
+  { "icon": "check_circle", "text": "JQuery", "link": "/jquery" },
+  { "icon": "check_circle", "text": "SVG", "link": "/svg" },
+  { "icon": "check_circle", "text": "Web Socket", "link": "/web-socket" },
+  { "icon": "check_circle", "text": "Web Worker", "link": "/web-worker" }
 ]
       
