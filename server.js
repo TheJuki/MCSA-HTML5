@@ -35,7 +35,7 @@ fastify.register(
         imgSrc: ["'self'", 'data:'],
         sandbox: ['allow-forms', 'allow-scripts', 'allow-same-origin'],
         scriptSrc: ["'self'"],
-        connectSrc: ["'self'", process.env.VUE_APP_API_URL],
+        connectSrc: ["'self'"],
         upgradeInsecureRequests: true,
         manifestSrc: ["'self'"]
       }
