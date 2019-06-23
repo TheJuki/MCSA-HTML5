@@ -54,7 +54,7 @@
       fixed
       style="padding-left:10px"
       v-show="drawer"
-    >&copy; TheJuki {{ new Date().getFullYear() }}</v-footer>
+    >&copy; {{ $t('website.copyright') }} {{ new Date().getFullYear() }}</v-footer>
     <v-toolbar color="blue darken-3" dark app :clipped-left="$vuetify.breakpoint.lgAndUp" fixed>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="ml-0 pl-3" style="width: 300px">
@@ -62,46 +62,6 @@
         <span class="hidden-xs-only" style="vertical-align: middle">Exam 70-480</span>
       </v-toolbar-title>
         <v-text-field flat solo-inverted hide-details prepend-inner-icon="search" v-model="search" :label="$t('website.search')" v-show='isLoggedIn' style="width: 25vw;" clearable="clearable" @keyup.enter="performSearch"></v-text-field>
-      <v-spacer></v-spacer>
-      <v-btn color="primary" dark v-if="!isLoggedIn" to="/login">{{ $t('login.login') }}</v-btn>
-      <v-menu offset-y="offset-y" bottom="bottom" min-width="300px" v-if="isLoggedIn">
-        <v-btn icon="icon" slot="activator">
-            <v-icon large="large">account_circle</v-icon>
-        </v-btn>
-        <v-card>
-          <v-list>
-            <v-list-tile avatar="avatar">
-              <v-list-tile-avatar>
-                <v-icon large="large">account_circle</v-icon>
-              </v-list-tile-avatar>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ fullName }}</v-list-tile-title>
-                <v-list-tile-sub-title>{{ username }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-          <v-divider></v-divider>
-          <v-list>
-            <v-list-tile @click="changePassword">
-              <v-list-tile-action>
-                <v-icon>lock</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ $t('website.change_password') }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-divider></v-divider>
-            <v-list-tile @click="logout()">
-              <v-list-tile-action>
-                  <v-icon>exit_to_app</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                  <v-list-tile-title>{{ $t('website.log_out') }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-card>
-      </v-menu>
     </v-toolbar>
     <v-content>
       <transition name="fade" mode="out-in">
@@ -113,7 +73,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapGetters } from 'vuex'
 
 import DrawerItemsConfig from '@/drawerItems.json'
 
@@ -125,22 +84,12 @@ declare module 'vue/types/options' {
 
 export default Vue.extend({
   name: 'container',
-  computed: {
-    ...mapGetters(['username', 'fullName', 'isLoggedIn', 'roles'])
-  },
   data: () => ({
     drawer: null,
     drawerItems: DrawerItemsConfig,
     search: ''
   }),
   methods: {
-    logout () {
-      localStorage.clear()
-      this.$store.dispatch('LOGOUT').then(res => {
-        this.$api.defaults.headers.common['Authorization'] = null
-        this.$router.push('/login?logout=true')
-      })
-    },
     performSearch () {
 
     },

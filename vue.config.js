@@ -1,6 +1,5 @@
 module.exports = {
   publicPath: '/',
-
   transpileDependencies: [/node_modules[/\\\\]vuetify[/\\\\]/],
 
   pluginOptions: {
@@ -10,5 +9,7 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: true
     }
-  }
+  },
+
+  lintOnSave: false
 }

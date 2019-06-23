@@ -1,23 +1,12 @@
 {
-  "login": {
-    "continue": "Login to continue.",
-    "error": "Incorrect username or password.",
-    "logout_successful": "You've logged out.",
-    "login": "Login",
-    "password": "Password",
-    "username": "Username"
-  },
   "website": {
+    "copyright": "TheJuki",
     "404": "404 Page Not Found",
     "error": "Whoops",
     "go_back": "Go Back",
     "hello": "Hello there!",
     "home": "Home",
     "title": "MCSA HTML5",
-    "search": "Search",
-    "log_out": "Log Out",
-    "change_password": "Change Password",
-    "unauthorized": "Unauthorized",
-    "unauthorized_message": "Sorry, you are not authorized to view the requested page."
+    "search": "Search"
   }
 }

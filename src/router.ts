@@ -9,11 +9,6 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/login',
-      meta: { title: 'Login' },
-      component: () => import('./views/LoginView.vue')
-    },
-    {
       path: '/',
       component: ContainerView,
       children: [
@@ -29,13 +24,8 @@ export default new Router({
         },
         {
           path: '/test',
-          meta: { title: 'Test', role: 'test_view', requiresAuth: true },
+          meta: { title: 'Test' },
           component: () => import('./views/Test.vue')
-        },
-        {
-          path: '/unauthorized',
-          meta: { title: 'Unauthorized' },
-          component: () => import('./views/UnauthorizedView.vue')
         },
         {
           path: '*',

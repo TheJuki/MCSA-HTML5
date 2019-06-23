@@ -25,17 +25,17 @@ fastify.register(
     frameguard: { action: 'deny' },
     contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self'"],
+        defaultSrc: ["'none'"],
         frameAncestors: ["'none'"],
         baseUri: ["'none'"],
         objectSrc: ["'self'"],
         formAction: ["'self'"],
-        styleSrc: ["'self'", "'unsafe-inline'", 'fonts.googleapis.com', 'cloud.tinymce.com', 'use.fontawesome.com'],
-        fontSrc: ["'self'", 'fonts.gstatic.com', 'cloud.tinymce.com', 'use.fontawesome.com'],
-        imgSrc: ["'self'", 'data:', 'sp.tinymce.com'],
+        styleSrc: ["'self'", "'unsafe-inline'", 'fonts.googleapis.com', 'use.fontawesome.com'],
+        fontSrc: ["'self'", 'fonts.gstatic.com', 'use.fontawesome.com'],
+        imgSrc: ["'self'", 'data:'],
         sandbox: ['allow-forms', 'allow-scripts', 'allow-same-origin'],
-        scriptSrc: ["'self'", 'cloud.tinymce.com'],
-        connectSrc: ["'self'", 'cloud.tinymce.com', 'rainmaker.tiny.cloud', process.env.VUE_APP_API_URL],
+        scriptSrc: ["'self'"],
+        connectSrc: ["'self'", process.env.VUE_APP_API_URL],
         upgradeInsecureRequests: true,
         manifestSrc: ["'self'"]
       }
