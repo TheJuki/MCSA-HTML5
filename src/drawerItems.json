@@ -18,6 +18,7 @@
   { "icon": "check_circle", "text": "AJAX", "link": "/ajax" },
   { "icon": "check_circle", "text": "Canvas", "link": "/canvas" },
   { "icon": "check_circle", "text": "Drop & Drop", "link": "/drag-drop" },
+  { "icon": "check_circle", "text": "Geo Location", "link": "/geo-location" },
   { "icon": "check_circle", "text": "JQuery", "link": "/jquery" },
   { "icon": "check_circle", "text": "SVG", "link": "/svg" },
   { "icon": "check_circle", "text": "Web Socket", "link": "/web-socket" },

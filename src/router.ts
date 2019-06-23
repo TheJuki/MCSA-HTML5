@@ -48,6 +48,11 @@ export default new Router({
           component: () => import('./views/DragDropView.vue')
         },
         {
+          path: '/geo-location',
+          meta: { title: 'Geo Location' },
+          component: () => import('./views/GeoLocationView.vue')
+        },
+        {
           path: '/jquery',
           meta: { title: 'JQuery' },
           component: () => import('./views/JQueryView.vue')

@@ -10,7 +10,7 @@
             :key="item.text"
             v-model="item.model"
             :prepend-icon="item.model ? item.icon : item['icon-alt']"
-            append-icon=""
+            append-icon
           >
             <template v-slot:activator>
               <v-list-tile>

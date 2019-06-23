@@ -17,6 +17,12 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+declare module 'vue/types/vue' {
+  interface Vue {
+    $openWeatherApiKey: String
+  }
+}
+
 sync(store, router)
 
 new Vue({
@@ -25,3 +31,5 @@ new Vue({
   i18n,
   render: h => h(App)
 }).$mount('#app')
+
+Vue.prototype.$openWeatherApiKey = process.env.VUE_APP_OPEN_WEATHER_API_KEY
