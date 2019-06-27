@@ -85,17 +85,8 @@ export default Vue.extend({
   name: 'container',
   data: () => ({
     drawer: null,
-    drawerItems: DrawerItemsConfig,
-    search: ''
-  }),
-  methods: {
-    performSearch () {
-
-    },
-    changePassword () {
-
-    }
-  }
+    drawerItems: DrawerItemsConfig
+  })
 })
 </script>
 
