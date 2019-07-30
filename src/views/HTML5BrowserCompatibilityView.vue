@@ -4,7 +4,7 @@
       <span class="headline">Browser Compatibility</span>
     </v-card-title>
     <v-data-table
-      :hide-actions='true'
+      hide-default-footer
       :headers='headers'
       :items='tableData'
     >

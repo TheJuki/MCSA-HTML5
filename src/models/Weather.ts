@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 export default interface Weather {
   main: {
     temp: number,

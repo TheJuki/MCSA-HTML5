@@ -25,7 +25,7 @@
         <v-switch v-model="model.muted" color="blue" label="Muted" value="true"></v-switch>
         <v-switch v-model="model.preload" color="blue" label="Preload" value="auto"></v-switch>
 
-        <v-btn outline color="blue" @click="playPause()">Play/Pause</v-btn>
+        <v-btn outlined color="blue" @click="playPause()">Play/Pause</v-btn>
 
         <v-card class="credits">
           <v-container>

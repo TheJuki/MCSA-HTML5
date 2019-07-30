@@ -13,55 +13,67 @@
             append-icon
           >
             <template v-slot:activator>
-              <v-list-tile>
-                <v-list-tile-content>
-                  <v-list-tile-title>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>
                     {{ item.text }}
-                  </v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
             </template>
-            <v-list-tile
+            <v-list-item
               v-for="(child, i) in item.children"
               :key="i"
               :to="child.link"
               v-ripple
             >
-              <v-list-tile-action v-if="child.icon">
+              <v-list-item-action v-if="child.icon">
                 <v-icon>{{ child.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
                   {{ child.text }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list-group>
-          <v-list-tile v-else :key="item.text" :to="item.link" v-ripple>
-            <v-list-tile-action>
+          <v-list-item v-else :key="item.text" :to="item.link" v-ripple>
+            <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
                 {{ item.text }}
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </template>
       </v-list>
     </v-navigation-drawer>
     <v-footer
+      absolute
+      class="font-weight-medium"
+    >
+      <v-flex
+        text-right
+        xs12
+      >
+        &copy; {{ $t('website.copyright') }} {{ new Date().getFullYear() }}
+      </v-flex>
+    </v-footer>
+     <v-app-bar
+      app
+      color="blue darken-3"
+      dark
+      :clipped-left="$vuetify.breakpoint.lgAndUp"
       fixed
-      style="padding-left:10px"
-      v-show="drawer"
-    >&copy; {{ $t('website.copyright') }} {{ new Date().getFullYear() }}</v-footer>
-    <v-toolbar color="blue darken-3" dark app :clipped-left="$vuetify.breakpoint.lgAndUp" fixed>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="ml-0 pl-3" style="width: 300px">
         <img class="logo" src="@/assets/MCSA.png" alt="logo">
         <span class="hidden-xs-only" style="vertical-align: middle">Exam 70-480</span>
       </v-toolbar-title>
-    </v-toolbar>
+    </v-app-bar>
     <v-content>
       <transition name="fade" mode="out-in">
         <router-view class="view"></router-view>
