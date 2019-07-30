@@ -19,7 +19,8 @@ router.beforeEach((to, from, next) => {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $openWeatherApiKey: String
+    $openWeatherApiKey: string,
+    $webSocketUrl: string
   }
 }
 
@@ -33,3 +34,4 @@ new Vue({
 }).$mount('#app')
 
 Vue.prototype.$openWeatherApiKey = process.env.VUE_APP_OPEN_WEATHER_API_KEY
+Vue.prototype.$webSocketUrl = process.env.VUE_APP_WS
